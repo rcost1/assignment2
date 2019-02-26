@@ -8,6 +8,8 @@ public class Calculator
 {
 	// Global total value
 	private int total;
+	private String history = "";
+	private boolean used; // tells when the calculator is used for formatting
 	/**
 	* @param none
 	* @return none
@@ -15,7 +17,7 @@ public class Calculator
 	*/
 	public Calculator () 
 	{
-		total = 0;  // not needed - included for clarity
+		total = 0; 
 	}
 	/**
 	* @param none
@@ -34,6 +36,8 @@ public class Calculator
 	public void add (int value) 
 	{
 		total = total + value;
+		history += " + " + value;
+		used = true;
 	}
 	/**
 	* @param value to subtract
@@ -43,6 +47,8 @@ public class Calculator
 	public void subtract (int value) 
 	{
 		total = total - value;
+		history += " - " + value;
+		used = true;
 	}
 	/**
 	* @param value to multiply
@@ -52,6 +58,8 @@ public class Calculator
 	public void multiply (int value) 
 	{
 		total = total * value;
+		history += " * " + value;
+		used = true;
 	}
 	/**
 	* @param value to divide the total by
@@ -68,6 +76,8 @@ public class Calculator
 		}
 		
 		total = total / value;
+		history += " / " + value;
+		used = true;
 	}
 	/**
 	* @param none
@@ -76,8 +86,18 @@ public class Calculator
 	* @description gives updates
 	* and calculator history
 	*/	
-	public String getHistory ()
+	public String getHistory()
 	{
-		return "";
+		System.out.println();
+		if( used )
+		{
+		    return "0" + history;
+		}
+		else
+		{
+		    return "0 ";
+		}
 	}
+	
 }
+
