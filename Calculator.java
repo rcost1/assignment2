@@ -33,6 +33,7 @@ public class Calculator
 	*/	
 	public void add (int value) 
 	{
+		total = total + value;
 	}
 	/**
 	* @param value to subtract
@@ -41,6 +42,7 @@ public class Calculator
 	*/	
 	public void subtract (int value) 
 	{
+		total = total - value;
 	}
 	/**
 	* @param value to multiply
@@ -49,9 +51,10 @@ public class Calculator
 	*/	
 	public void multiply (int value) 
 	{
+		total = total * value;
 	}
 	/**
-	* @param none
+	* @param value to divide the total by
 	* @return none
 	* @description Divides total by value 
 	* Integer division, if value = 0,
@@ -59,6 +62,12 @@ public class Calculator
 	*/	
 	public void divide (int value) 
 	{
+		if(value == 0)
+		{
+			total = 0;
+		}
+		
+		total = total / value;
 	}
 	/**
 	* @param none
